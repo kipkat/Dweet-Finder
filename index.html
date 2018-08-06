@@ -1,0 +1,51 @@
+<head>
+    <script>null; // removed by Updog</script>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <h1 class='c'>Dweet Finder</h1>
+    <title>Dweet Finder</title>
+    <a class='c' id='last'>Last dweet: calculating...</a><br />
+    <textarea style="height: 25%" class='c' id='code' placeholder="code"></textarea>
+    <br />
+    <input class='c' id='author' placeholder="partial name of the author (null == any author)"/>
+    <and class='c' align=center>and</and>
+    <input class='c' id='limit' placeholder="limit"/>
+    <and class='c' align=center>and</and>
+    <input class='c' id='offset' placeholder="offset"/><br />
+    <label class='c' align=center><input class='c' value='off' id='showc' type='checkbox' placeholder="comments"/>Show comments (43.2% slower)</label></br>
+    <button onclick='search()' class='c' id='sbutton' style='height: 40; cursor: pointer;'>Search</button></br>
+    <a class='c' id='error'></a>
+    <div class='sr' id='result'></div>
+    <div class="chart-box">
+        <canvas id='chart' width="254" height="245"></canvas>
+    </div>
+    <br />
+    <script src='main.js'></script>
+    <script>
+        var ctx = document.getElementById("chart").getContext('2d');
+        var ch = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Likes',
+                    data: [0],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Awesomeness',
+                    data: [0],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Length Ratio',
+                    data: [0],
+                    borderWidth: 1
+                }]
+            }
+        }
+        );
+    </script>
+</body>

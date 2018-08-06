@@ -1,0 +1,38 @@
+body {
+     background: white;
+}
+ .c {
+     margin: auto;
+     width: 60%;
+     display: block;
+     background-color: auto;
+     align-self: center;
+}
+ .rs {
+     margin-left: auto;
+     width: 30%;
+     display: block;
+     align: center;
+}
+ input, button, textarea {
+     background-color: #e1e5ff;
+     color: #520000;
+     font-weight: bolder;
+}
+
+ button:active
+{
+     color: blue;
+}
+ ::placeholder {
+     color:#7373ff;
+}
+ body {
+     background-color: #bbbbff
+}
+ h1 {
+     color: #413b88;
+}
+ a {
+     color: #2b3f7b
+}

@@ -5,7 +5,6 @@ function nullf(){null;}
 function rq(url) {
     request = new XMLHttpRequest();
     request.open("GET", url, false);
-    request.setRequestHeader("Access-Control-Allow-Origin", '*');
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send();
     return request;

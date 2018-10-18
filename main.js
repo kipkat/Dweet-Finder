@@ -1,6 +1,7 @@
 var gid = n => document.getElementById(n);
 Chart.defaults.global.legend.display = false;
 function nullf(){null;}
+bdocument = document
 
 function rq(url) {
     request = new XMLHttpRequest();
@@ -52,8 +53,7 @@ try {
                     code = dweets[i].code.split(",").join(", ").split(");").join(")</br>")
                     gid('result').innerHTML +=
                         "<pre><code class='c'><textarea style='margin: 0px; width: 100%; height: 10%;'>" + code +
-                        "</textarea></code></pre>"
-
+                        "</textarea></code><br><iframe class='visual' src='http://dweet.dwitter.net/id/"+dweets[i].id+"'></iframe></pre>"
                     found++;
                     ch.data.labels.push(dweets[i].id)
                     ch.data.datasets[0].data.push(dweets[i].awesome_count)
@@ -67,6 +67,7 @@ try {
         }
         gid('error').innerHTML = ""
         gid("sbutton").innerHTML = 'Found ' + found + "/" + gid('limit').value + " results!"
+        setInterval(function(){for(dweetVisual of bdocument.getElementsByClassName`visual`){dweetVisual.contentWindow.playDemo()}}, 1000)
     }
 } catch (e) {
     gid("error").textContent = e
